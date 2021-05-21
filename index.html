@@ -1,1 +1,150 @@
-Hello World
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--LINK TO CSS FILE-->
+        <link href="" rel="stylesheet" type="text/css">
+        <title>Sondage</title>
+    </head>
+    <body>
+
+        <h1>Sondage sur Amazon</h1>
+        <p>Nous aimerions avoir votre opinion sur l'interface usager (UI) du site d'<a href="" target="_blank">Amazon</a>.</p>
+
+        <a href="" target="_blank"><img src="" alt="Image de la page principale d'amazon"/></a>
+
+        <form title="amazon-form" method="POST">
+            <div class="form-section">
+                <h2>Qui êtes-vous?</h2>
+                <p>Aidez-nous à savoir quel type d'utilisateur vous êtes</p>
+                
+                <label for="age">Votre age</label>
+                <input type="number" id="age" />
+                <br />
+
+                <label>Avez-vous déjà fait une commande avec Amazon?</label>
+                <br />
+                <input type="radio" name="amazon-use" id="amazon-use-yes" value="yes">
+                <label for="amazon-use-yes" class="small">Oui</label>
+                <br />
+                <input type="radio" name="amazon-use" id="amazon-use-no" value="no" >
+                <label for="amazon-use-no" class="small">Non</label>
+                <br />
+
+                <label>Quels types de produit vous plaisent le plus sur Amazon?</label>
+                <br/>
+                <input type="checkbox" name="product-type" id="product-type-1" value="Livre" />
+                <label for="product-type-1" class="small">Livre</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-2" value="Jeux vidéo" />
+                <label for="product-type-2" class="small">Jeux vidéo</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-3" value="Musique, films et émissions" />
+                <label for="product-type-3" class="small">Musiques, films et émissions</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-4" value="Électronique, Ordinateurs et Bureai" />
+                <label for="product-type-4" class="small">Électronique, Ordinateurs et Bureai</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-5" value="Maison, Jardin, Animalerie et Outils" />
+                <label for="product-type-5" class="small">Maison, Jardin, Animalerie et Outils</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-6" value="Épicerie et Whole Foods Market" />
+                <label for="product-type-6" class="small">Épicerie et Whole Foods Market</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-7" value="Santé et Beauté" />
+                <label for="product-type-7" class="small">Santé et Beauté</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-8" value="Jouets et Bébés" />
+                <label for="product-type-8" class="small">Jouets et Bébés</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-9" value="Vêtements, Chaussures et Bijoux" />
+                <label for="product-type-9" class="small">Vêtements, Chaussures et Bijoux</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-10" value="Handmade" />
+                <label for="product-type-10" class="small">Handmade</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-11" value="Sports et Plein air" />
+                <label for="product-type-11" class="small">Sports et Plein air</label>
+                <br />
+                <input type="checkbox" name="product-type" id="product-type-12" value="Auto et Industrie" />
+                <label for="product-type-12" class="small">Auto et Industrie</label>
+            </div>
+            <div class="form-section">
+                <h2>Produits</h2>
+                <p>Aidez-nous à déterminer si nous présentons les bons produits.</p>
+                
+                <label>Est-il facile de trouver un produit spécifique?</label>
+                <br />
+                <select id="find-product">
+                    <option value="5">Très facile</option>
+                    <option value="4">Facile</option>
+                    <option value="3">Neutre</option>
+                    <option value="2">Difficile</option>
+                    <option value="1">Très difficile</option>
+                </select>
+                <br />
+                
+                <label>Les produits de la page d'acceuil vous semblent-ils intéressants?</label>
+                <br />
+                <select id="homepage-products">
+                    <option value="5">Très intéressants</option>
+                    <option value="4">Intéressants</option>
+                    <option value="3">Neutre</option>
+                    <option value="2">Pas intéressants</option>
+                    <option value="1">Pas du tout intéressants</option>
+                </select>
+            </div>
+            <div class="form-section">
+                <h2>Paniers</h2>
+                <p>Aidez-nous à déterminer si votre panier est adéquat.</p>
+                
+                <label>Est-il facile de gérer les items de votre panier?</label>
+                <br />
+                <select id="cart-gestion">
+                    <option value="5">Très facile</option>
+                    <option value="4">Facile</option>
+                    <option value="3">Neutre</option>
+                    <option value="2">Difficile</option>
+                    <option value="1">Très difficile</option>
+                </select>
+                <br />
+                
+                <label>Faites-vous confiance à Amazon avec les informations de votre carte bancaire?</label>
+                <br />
+                <select id="payment-trust">
+                    <option value="5">Très confiance</option>
+                    <option value="4">Confiance</option>
+                    <option value="3">Neutre</option>
+                    <option value="2">Pas confiance</option>
+                    <option value="1">Pas du tout confiance</option>
+                </select>
+            </div>
+            <div class="form-section">
+                <h2>Problèmes</h2>
+                <p>Aidez-nous à nous améliorer en nous faisant part de vos difficultés avec Amzon!</p>
+                <label>Avez-vous déjà eu des problèmes avec Amazon?</label>
+                <br />
+                <input type="radio" name="problems" id="problems-yes" value="yes" />
+                <label for="problems-yes" class="small">Oui</label>
+                <input type="radio" name="problems" id="problems-no" value="no" />
+                <label for="problems-no" class="small">Non</label>
+                <br />
+                <label for="problems-comments">Quels sont-ils?</label>
+                <br />
+                <textarea id="problems-comments"></textarea>
+            </div>
+            <div class="form-section">
+                <h2>Commentaires</h2>
+                <p>Si vous avez d'autre scommentaires au sujet d'Amazon ou de ce sondage, faites-nous en part!</p>
+                <textarea id="general-comments"></textarea>
+            </div>
+
+            <div class="form-section">
+                <p>Merci d'avoir pris le tmeps de répondre à notre questionnaire!</p>
+            </div>
+
+            <button type="submit">Soumettre</button>
+        </form>
+
+    </body>
+</html>
