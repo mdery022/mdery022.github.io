@@ -2,37 +2,39 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!--LINK TO CSS FILE-->
-        <link href="" rel="stylesheet" type="text/css">
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
         <title>Sondage</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
 
         <h1>Sondage sur Amazon</h1>
-        <p>Nous aimerions avoir votre opinion sur l'interface usager (UI) du site d'<a href="" target="_blank">Amazon</a>.</p>
+        <p>Nous aimerions avoir votre opinion sur l'interface usager (UI) du site d'<a href="https://www.amazon.ca/" target="_blank">Amazon</a>.</p>
 
-        <a href="" target="_blank"><img src="" alt="Image de la page principale d'amazon"/></a>
+        <a href="https://www.amazon.ca/" target="_blank" class="image-link"><img src="assets/img/Amazon_Homepage.png" alt="Image de la page principale d'amazon" /></a>
 
         <form title="amazon-form" method="POST">
             <div class="form-section">
                 <h2>Qui êtes-vous?</h2>
                 <p>Aidez-nous à savoir quel type d'utilisateur vous êtes</p>
                 
-                <label for="age">Votre age</label>
+                <label for="name">Votre nom: </label>
+                <input type="text" id="name" />
+                <br />
+                
+                <label for="age">Votre age: </label>
                 <input type="number" id="age" />
                 <br />
 
                 <label>Avez-vous déjà fait une commande avec Amazon?</label>
-                <br />
                 <input type="radio" name="amazon-use" id="amazon-use-yes" value="yes">
                 <label for="amazon-use-yes" class="small">Oui</label>
-                <br />
                 <input type="radio" name="amazon-use" id="amazon-use-no" value="no" >
                 <label for="amazon-use-no" class="small">Non</label>
                 <br />
 
                 <label>Quels types de produit vous plaisent le plus sur Amazon?</label>
-                <br/>
                 <input type="checkbox" name="product-type" id="product-type-1" value="Livre" />
                 <label for="product-type-1" class="small">Livre</label>
                 <br />
@@ -74,7 +76,6 @@
                 <p>Aidez-nous à déterminer si nous présentons les bons produits.</p>
                 
                 <label>Est-il facile de trouver un produit spécifique?</label>
-                <br />
                 <select id="find-product">
                     <option value="5">Très facile</option>
                     <option value="4">Facile</option>
@@ -85,7 +86,6 @@
                 <br />
                 
                 <label>Les produits de la page d'acceuil vous semblent-ils intéressants?</label>
-                <br />
                 <select id="homepage-products">
                     <option value="5">Très intéressants</option>
                     <option value="4">Intéressants</option>
@@ -99,7 +99,6 @@
                 <p>Aidez-nous à déterminer si votre panier est adéquat.</p>
                 
                 <label>Est-il facile de gérer les items de votre panier?</label>
-                <br />
                 <select id="cart-gestion">
                     <option value="5">Très facile</option>
                     <option value="4">Facile</option>
@@ -110,7 +109,6 @@
                 <br />
                 
                 <label>Faites-vous confiance à Amazon avec les informations de votre carte bancaire?</label>
-                <br />
                 <select id="payment-trust">
                     <option value="5">Très confiance</option>
                     <option value="4">Confiance</option>
@@ -123,7 +121,6 @@
                 <h2>Problèmes</h2>
                 <p>Aidez-nous à nous améliorer en nous faisant part de vos difficultés avec Amzon!</p>
                 <label>Avez-vous déjà eu des problèmes avec Amazon?</label>
-                <br />
                 <input type="radio" name="problems" id="problems-yes" value="yes" />
                 <label for="problems-yes" class="small">Oui</label>
                 <input type="radio" name="problems" id="problems-no" value="no" />
@@ -131,20 +128,26 @@
                 <br />
                 <label for="problems-comments">Quels sont-ils?</label>
                 <br />
-                <textarea id="problems-comments"></textarea>
+                <textarea rows="6" id="problems-comments"></textarea>
             </div>
             <div class="form-section">
                 <h2>Commentaires</h2>
                 <p>Si vous avez d'autre scommentaires au sujet d'Amazon ou de ce sondage, faites-nous en part!</p>
-                <textarea id="general-comments"></textarea>
+                <textarea rows="6" id="general-comments"></textarea>
             </div>
 
             <div class="form-section">
-                <p>Merci d'avoir pris le tmeps de répondre à notre questionnaire!</p>
+                <p>Merci d'avoir pris le temps de répondre à notre questionnaire!</p>
             </div>
 
-            <button type="submit">Soumettre</button>
+            <div class="horizontal-align">
+                <button type="submit">Soumettre</button>
+            </div>
         </form>
+
+        <footer>
+            <p>Site web conçu par <em>- Coding in the AM -</em></p>
+        </footer>
 
     </body>
 </html>

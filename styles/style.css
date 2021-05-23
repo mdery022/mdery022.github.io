@@ -1,0 +1,91 @@
+body {
+    background-color: #232F3E;
+    font-family: 'Roboto';
+    margin: 0;
+}
+h1 {
+    color: #FF9900;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat';
+    letter-spacing: 1px;
+}
+p {
+    color: white;
+}
+a {
+    color: #FF9900;
+    text-decoration: none;
+}
+h1, p, a {
+    text-align: center;
+}
+img {
+    max-width: 600px;
+}
+    a.image-link{
+        display: block;
+        margin: auto;
+    }
+
+.horizontal-align {
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+/*--- FOOTER ---*/
+
+footer {
+    background-color: #37475A;
+    padding: 3em 0;
+    font-size: 0.9em;
+}
+
+/*--- FORM ---*/
+
+div.form-section {
+    background-color: white;
+    width: 80%;
+    margin: 4em auto;
+    padding: 2em;
+    border-radius: 10px;
+    color: #131A22;
+    max-width: 800px;
+}
+
+div.form-section h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+.form-section p {
+    color: #131A22;
+    text-align: left;
+    font-size: 0.95em;
+    margin: 0
+}
+
+label {
+    margin-top: 1em;
+    display: block;
+}
+label.small {
+    display: inline;
+    font-size: 0.95em;
+}
+
+textarea {
+    width: 100%;
+}
+
+form button {
+    margin-bottom: 4em;
+    padding: 1em;
+    color: white;
+    background-color: #FF9900;
+    border: none;
+    letter-spacing: 2px;
+    font-size: 0.9em;
+    font-weight: bold;
+    width: 100%;
+}
