@@ -2,7 +2,7 @@
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
-function openInfo(evt, tabName) {
+function openInfo(tabName) {
 
 	// Get all elements with class="tabcontent" and hide them
 	tabcontent = document.getElementsByClassName("tabcontent");
@@ -16,9 +16,11 @@ function openInfo(evt, tabName) {
 		tablinks[i].className = tablinks[i].className.replace(" active", "");
 	}
 
+	var tablink = document.getElementById(tabName + "Tab");
+
 	// Show the current tab, and add an "active" class to the button that opened the tab
-	document.getElementById(tabName).style.display = "block";
-	evt.currentTarget.className += " active";
+	document.getElementById(tabName).style.display = "flex";
+	tablink.className += " active";
 
 }
 
@@ -27,22 +29,22 @@ function openInfo(evt, tabName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
-	var s1 = document.getElementById(slct1).getElementsByTagName("input");
-    var s2 = document.getElementById(slct2);
+function populateListProductChoices(inputsDivId, displayDivId) {
+	var inputs = document.getElementById(inputsDivId).getElementsByTagName("input");
+    var displayDiv = document.getElementById(displayDivId);
 	
 	var restrictions = [];
 
-	for (var i = 0; i < s1.length; i++) {
-		var input = s1[i];
+	for (var i = 0; i < inputs.length; i++) {
+		var input = inputs[i];
 
 		if (input.checked) {
 			restrictions.push(input.value);
 		}
 	}
 
-	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
-    s2.innerHTML = "";
+	// displayDiv represents the <div> in the Products tab, which shows the product list, so we first set it empty
+    displayDiv.innerHTML = "";
 		
 	// obtain a reduced list of products based on restrictions
     var optionArray = restrictListProducts(products, restrictions);
@@ -55,21 +57,22 @@ function populateListProductChoices(slct1, slct2) {
 			
 		var productName = optionArray[i].name;
 		var productPrice = optionArray[i].price;
-		// create the checkbox and add in HTML DOM
+
+		var container = document.createElement("label");
+		container.className = "items-container";
+		container.appendChild(document.createTextNode(productName + " - " + productPrice + "$"));
+
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
 		checkbox.value = productName;
-		s2.appendChild(checkbox);
-		
-		// create a label for the checkbox, and also add in HTML DOM
-		var label = document.createElement('label')
-		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName + " - " + productPrice));
-		s2.appendChild(label);
-		
-		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));    
+		container.appendChild(checkbox);
+
+		var checkmark = document.createElement("span");
+		checkmark.className = "checkmark";
+		container.appendChild(checkmark);
+
+		displayDiv.appendChild(container); 
 	}
 }
 	
@@ -82,23 +85,39 @@ function selectedItems(){
 	var ele = document.getElementsByName("product");
 	var chosenProducts = [];
 	
-	var c = document.getElementById('displayCart');
-	c.innerHTML = "";
+	var itemsContainer = document.getElementById('cart-items');
+	itemsContainer.innerHTML = "";
+
+	var notification = document.getElementById('cart-notification');
 	
 	// build list of selected item
-	var para = document.createElement("P");
-	para.innerHTML = "You selected : ";
-	para.appendChild(document.createElement("br"));
+	var list = document.createElement("ul");
 	for (i = 0; i < ele.length; i++) { 
 		if (ele[i].checked) {
-			para.appendChild(document.createTextNode(ele[i].value));
-			para.appendChild(document.createElement("br"));
+			var listElem = document.createElement("li");
+			listElem.innerHTML = ele[i].value + " - " + getPrice(ele[i].value) + "$";
+			list.appendChild(listElem);
 			chosenProducts.push(ele[i].value);
 		}
 	}
+
+	if (chosenProducts.length > 0) {
+		itemsContainer.appendChild(list);
+
+		notification.innerHTML = "Successfully put " + chosenProducts.length + " item(s) in the cart";
+		notification.className += " visible";
+		setTimeout(
+			function() {
+				var notification = document.getElementById('cart-notification');
+				notification.className = notification.className.replace(" visible", "");
+			}, 2000);
+	} else {
+		var text = document.createElement("p");
+		text.innerHTML = "You don't have any item in your cart";
+		itemsContainer.appendChild(text);
+	}
 		
-	// add paragraph and total price
-	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+	// add total price
+	document.getElementById('total-price').innerHTML = "Total Price is " + getTotalPrice(chosenProducts);
 		
 }

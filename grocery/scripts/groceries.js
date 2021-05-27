@@ -119,3 +119,14 @@ function getTotalPrice(chosenProducts) {
 	}
 	return totalPrice;
 }
+
+function getPrice(productName) {
+	price = 0;
+	for (let i=0; i<products.length; i+=1) {
+		if (productName == products[i].name){
+			price = products[i].price;
+			break;
+		}
+	}
+	return price;
+}

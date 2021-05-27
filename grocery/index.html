@@ -1,64 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp-->
-	<link href="styles/style.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
-<!-- This web page is inspired by Caroline Barriere's webpage at https://raw.githubusercontent.com/carolinebarriere/carolinebarriere.github.io/master/SEG3125-Module2-Grocery -->
+  <!-- This web page is inspired by Caroline Barriere's webpage at https://raw.githubusercontent.com/carolinebarriere/carolinebarriere.github.io/master/SEG3125-Module2-Grocery -->
 
-<!-- Tab links, each one with an onclick event associated with it -->
-    <div class="tab">
-        <p class="tablinks">Dery's Groceries</p>
-        <button class="tablinks active" onclick="openInfo(event, 'Client')">Client</button>
-        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+  <!-- Tab links, each one with an onclick event associated with it -->
+  <div class="tab">
+      <p class="tablinks store-name">Dery's Groceries</p>
+      <button id="ClientTab" class="tablinks active" onclick="openInfo('Client')">Client</button>
+      <button id="ProductsTab" class="tablinks" onclick="openInfo('Products')">Products</button>
+      <button id="CartTab" class="tablinks notification-anchor" onclick="openInfo('Cart')">Cart
+        <span class="notification" id="cart-notification"></span>
+      </button>
+  </div>
+
+  <div class="page">
+
+    <!-- Tab content -->
+    <div id="Client" class="tabcontent" style="display: flex;">
+      <h1 class="with-subtitle">Client Information</h1>
+      <p class="subtitle">Tell us a bit about you.</p>
+      <p class="no-bottom-margin">Select your diets:</p>
+      <div id="dietOptions">
+        <label class="diet-option-container">
+          <input type="checkbox" value="LactoseFree" id="lactoseFree" onchange="populateListProductChoices('dietOptions', 'displayProduct')" />
+          <div class="content">
+            <span class="text">Lactose Free</span>
+            <span class="checkmark"></span>
+          </div>
+        </label>
+        <label class="diet-option-container">
+          <input type="checkbox" value="NutsFree" id="nutsFree" onchange="populateListProductChoices('dietOptions', 'displayProduct')" />
+          <div class="content">
+            <span class="text">Nuts Free</span>
+            <span class="checkmark"></span>
+          </div>
+        </label>
+        <label class="diet-option-container">
+          <input type="checkbox" value="Organic" id="organicOnly" onchange="populateListProductChoices('dietOptions', 'displayProduct')" />
+          <div class="content">
+            <span class="text">Organic Products Only</span>
+            <span class="checkmark"></span>
+          </div>
+        </label>
+        <br />
+      </div>
+      <br />
+      <button onclick="openInfo('Products')">Go ></button>
     </div>
 
-<!-- Tab content -->
-<div id="Client" class="tabcontent" style="display: block;">
-  <h3>Client Information</h3>
-  <p>Tell us a bit about you.</p>
-	Choose a Diet Category:
-  <div id="dietOptions">
-    <input type="checkbox" value="LactoseFree" id="lactoseFree" onchange="populateListProductChoices('dietOptions', 'displayProduct')" />
-    <label for="organicOnly">LactoseFree</label>
-    <br />
-    <input type="checkbox" value="NutsFree" id="nutsFree" onchange="populateListProductChoices('dietOptions', 'displayProduct')" />
-    <label for="organicOnly">Nuts Free</label>
-    <br />
-    <input type="checkbox" value="Organic" id="organicOnly" onchange="populateListProductChoices('dietOptions', 'displayProduct')" />
-    <label for="organicOnly">Organic Products Only</label>
+    <div id="Products" class="tabcontent">
+      <h1 class="with-subtitle">Your targeted products</h1>
+      <p class="subtitle">We preselected products based on your restrictions.</p>
+      <p>Choose items to buy:</p>
+      <div id="displayProduct"></div>
+      <br />
+      <button id="addCart" type="button" class="block" onclick="selectedItems()">
+        Add selected items to cart.
+      </button>
+    </div>
+
+    <div id="Cart" class="tabcontent">
+      <h1 class="with-subtitle">Cart</h1>
+      <p class="subtitle">Here is your cart.</p>
+      <p class="no-bottom-margin">You selected: </p>
+      <div id="cart-items"></div>
+      <p><strong>Total: </strong><span id="total-price">0</span>$</p>
+      <div id="displayCart"></div>
+    </div>
+
   </div>
-</div>
 
-<div id="Products" class="tabcontent">
-  <h3>Your targeted products</h3>
-  <p>We preselected products based on your restrictions.</p>
-	 Choose items to buy:
-	 <div id="displayProduct"></div>
-	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
-		Add selected items to cart.
-	</button>
-</div>
+  <footer>
+      <p>Site Web conçu par <em>- Coding in the AM -</em></p>
+  </footer>
 
-<div id="Cart" class="tabcontent">
-  <h3>Cart</h3>
-  <p>Here is your cart.</p>
-  <div id="displayCart"></div>
-</div>
-
-<footer>
-    <p>Site Web conçu par <em>- Coding in the AM -</em></p>
-</footer>
-
-<script src="scripts/groceries.js"></script>
-<script src="scripts/main.js"></script>
-<script>
-  populateListProductChoices('dietOptions', 'displayProduct')
-</script>
+  <script src="scripts/groceries.js"></script>
+  <script src="scripts/main.js"></script>
+  <script>
+    populateListProductChoices('dietOptions', 'displayProduct')
+    selectedItems()
+  </script>
 
 </body>
 </html>

@@ -1,42 +1,329 @@
-/* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
+/*
+    Color palette inpired by the natural and earthy palette at https://visme.co/blog/website-color-schemes/
+*/
 
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-  }
-  
-  /* Style the buttons that are used to open the tab content */
-  .tab .tablinks {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    padding: 14px 16px;
+* {
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
     margin: 0;
-    transition: 0.3s;
-    font-size: 1em;
-  }
+}
 
-  .tab button {
-      cursor: pointer;
-  }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #ddd;
-  }
-  
-  /* Create an active/current tablink class */
-  .tab button.active {
-    background-color: #ccc;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-  }
+.page {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.store-name {
+    font-family: 'Merriweather', serif;
+    padding: 0 1em;
+    font-size: 1.4em;
+}
+
+h1, h2, h3, h4, h5, .subtitle {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+    h1 {
+        font-size: 1.9em;
+        letter-spacing: 2px;
+        font-weight: normal;
+        color: #4e85bf;
+    }
+
+        h1.with-subtitle {
+            margin-bottom: 0;
+        }
+
+    .subtitle {
+        margin-top: 0;
+        letter-spacing: 1px;
+    }
+
+button {
+    background-color: #8D8741;
+    color: white;
+    letter-spacing: 1px;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 10px;
+    margin: auto;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #AFA852;
+    }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0.5em;
+    background-color: #8D8741;
+    color: white;
+    text-align: center;
+}
+
+.no-bottom-margin{
+    margin-bottom: 0;
+}
+
+/*  LISTS
+    This part of the style sheet is taken from  https://www.w3schools.com/howto/howto_css_bullet_color.asp */
+
+    ul {
+        list-style: none; /* Remove default bullets */
+    }
+
+    ul li {
+        position: relative;
+    }
+    
+    ul li::before {
+        content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        color: #4e85bf; /* Change the color */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 0.5em; /* Also needed for space (tweak if needed) */
+        margin: 0 0 0 -0.5em; /* Also needed for space (tweak if needed) */
+        font-size: 40px;
+        line-height: 5px;
+        position: absolute;
+        top: 40%;
+    }
+
+/*  DIET SELECTOR
+    This part of the style sheet is inspired by  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox */
+
+    /* The container */
+    .diet-option-container {
+        display: block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin: 0;
+    }
+    
+    /* Hide the browser's default checkbox */
+    .diet-option-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .diet-option-container .content {
+        position: relative;
+        padding: 0.5em;
+    }
+
+    .diet-option-container .text {
+        padding-left: 10px;
+    }
+
+    /* Create a custom checkbox */
+    .diet-option-container .checkmark {
+        position: absolute;
+        top: 0.25em;
+        left: 10px;
+        height: 25px;
+        width: 25px;
+        background-color: transparent;
+    }
+
+    /* On mouse-over and selection, add a pink background color */
+    .diet-option-container:hover input~.content, .diet-option-container input:checked~.content {
+        background-color: #4e85bf;
+        color: white;
+    }
+
+    /* On selection, add space for the checkmark */
+    .diet-option-container input:checked~.content {
+        padding-left: 35px;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .diet-option-container .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .diet-option-container input:checked~.content .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .diet-option-container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+/** ITEM SELECTOR
+  * This part of the style sheet is taken from  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox */
+
+    /* The container */
+    .items-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Hide the browser's default checkbox */
+    .items-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .items-container .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 5px;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .items-container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .items-container input:checked ~ .checkmark {
+        background-color: #4e85bf;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .items-container .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .items-container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .items-container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+/** ITEMS ADDED NOTIFICATION
+  * This part of the style sheet is inspired by https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_tooltip */
+
+    .notification-anchor {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+    
+    .notification-anchor .notification {
+        position: absolute;
+        width: 240px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-radius: 6px;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity .6s;
+        top: 115%;
+        left: 50%;
+        margin-left: -125px;
+        font-size: 16px;
+    }
+    
+    .notification-anchor .notification::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent #555 transparent;
+    }
+    
+    .notification-anchor .notification.visible {
+        opacity: 1;
+    }
+
+/** TOPBAR MENU
+  * This part of the style sheet is inspired by  https://www.w3schools.com/howto/howto_js_tabs.asp */
+
+    /* Style the tab */
+    .tab {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #8D8741;
+    }
+
+    /* Style the buttons that are used to open the tab content */
+    .tab .tablinks {
+        background-color: inherit;
+        border: none;
+        outline: none;
+        margin: 0;
+        transition: 0.3s;
+        color: white;
+    }
+
+    .tab button {
+        padding: 1em;
+        border-radius: 0;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #AFA852;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+        background-color: white;
+        color: #8D8741;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 2em;
+        flex-direction: column;
+    }
