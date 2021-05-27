@@ -12,23 +12,26 @@
 <!-- Tab links, each one with an onclick event associated with it -->
     <div class="tab">
         <p class="tablinks">Dery's Groceries</p>
-        <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+        <button class="tablinks active" onclick="openInfo(event, 'Client')">Client</button>
         <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
         <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
     </div>
 
 <!-- Tab content -->
-<div id="Client" class="tabcontent">
+<div id="Client" class="tabcontent" style="display: block;">
   <h3>Client Information</h3>
   <p>Tell us a bit about you.</p>
 	Choose a Diet Category:
-	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-	<option value=""></option>
-	<option value="LactoseFree">Lactose Free</option>
-    <option value="NutsFree">Nuts Free</option>
-    <option value="Organic">Organic</option>
-    <option value="None">None</option>
-	</select>
+  <div id="dietOptions">
+    <input type="checkbox" value="LactoseFree" id="lactoseFree" onchange="populateListProductChoices('dietOptions', 'displayProduct')" />
+    <label for="organicOnly">LactoseFree</label>
+    <br />
+    <input type="checkbox" value="NutsFree" id="nutsFree" onchange="populateListProductChoices('dietOptions', 'displayProduct')" />
+    <label for="organicOnly">Nuts Free</label>
+    <br />
+    <input type="checkbox" value="Organic" id="organicOnly" onchange="populateListProductChoices('dietOptions', 'displayProduct')" />
+    <label for="organicOnly">Organic Products Only</label>
+  </div>
 </div>
 
 <div id="Products" class="tabcontent">
@@ -47,10 +50,14 @@
   <div id="displayCart"></div>
 </div>
 
+<footer>
+    <p>Site Web conçu par <em>- Coding in the AM -</em></p>
+</footer>
+
 <script src="scripts/groceries.js"></script>
 <script src="scripts/main.js"></script>
 <script>
-    openInfo(event, 'Client')
+  populateListProductChoices('dietOptions', 'displayProduct')
 </script>
 
 </body>

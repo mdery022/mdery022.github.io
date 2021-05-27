@@ -11,7 +11,7 @@ var products = [
 		price: 5.99
 	},
 	{
-		name: "Almond Flavored Granola",
+		name: "Almond Granola Bar",
 		lactoseFree: true,
 		nutsFree: false,
 		organic: false,
@@ -23,6 +23,55 @@ var products = [
 		nutsFree: true,
 		organic: false,
 		price: 10.00
+	},
+	{
+		name: "Organic Eggs",
+		lactoseFree: true,
+		nutsFree: true,
+		organic: true,
+		price: 0
+	},
+	{
+		name: "Organic Almond Yogourt",
+		lactoseFree: false,
+		nutsFree: false,
+		organic: true,
+		price: 0
+	},
+	{
+		name: "Organic Cheese",
+		lactoseFree: false,
+		nutsFree: true,
+		organic: true,
+		price: 0
+	},
+	{
+		name: "Almonds",
+		lactoseFree: true,
+		nutsFree: false,
+		organic: false,
+		price: 0
+	},
+	{
+		name: "Apple",
+		lactoseFree: true,
+		nutsFree: true,
+		organic: false,
+		price: 0
+	},
+	{
+		name: "Organic Strawberry",
+		lactoseFree: true,
+		nutsFree: true,
+		organic: true,
+		price: 0
+	},
+	{
+		name: "Cerials",
+		lactoseFree: true,
+		nutsFree: false,
+		organic: false,
+		price: 0
 	}
 	// TODO: ADD 7 MORE ARTICLES
 ];
@@ -32,23 +81,32 @@ var products = [
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction) {
-	let product_names = [];
+function restrictListProducts(prods, restrictions) {
+	let products = [];
 	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "LactoseFree") && (prods[i].lactoseFree == true)){
-			product_names.push(prods[i].name);
+		var selected = true;
+		var prod = prods[i];
+
+		for (var j = 0; j < restrictions.length; j++) {
+			var restriction = restrictions[j];
+	
+			if ((restriction == "LactoseFree") && (prod.lactoseFree != true)
+				|| (restriction == "NutsFree") && (prod.nutsFree != true)
+				|| (restriction == "Organic") && (prod.organic != true)){
+				selected = false;
+			}
 		}
-		else if ((restriction == "NutsFree") && (prods[i].nutsFree == true)){
-			product_names.push(prods[i].name);
-		}
-		else if (restriction == "Organic" && (prods[i].organic == true)){
-			product_names.push(prods[i].name);
-		}
-		else if (restriction == "None"){
-			product_names.push(prods[i].name);
-		}
+
+		if (selected) {
+			products.push(prod);
+		}		
 	}
-	return product_names;
+	
+	// Custom sort function by price
+	products.sort(function(elem1, elem2){
+		return elem1.price > elem2.price ? 1 : -1;
+	})
+	return products;
 }
 
 // Calculate the total price of items, with received parameter being a list of products
