@@ -22,56 +22,56 @@ var products = [
 		lactoseFree: true,
 		nutsFree: true,
 		organic: false,
-		price: 10.00
+		price: 10.20
 	},
 	{
 		name: "Organic Eggs",
 		lactoseFree: true,
 		nutsFree: true,
 		organic: true,
-		price: 0
+		price: 8.99
 	},
 	{
 		name: "Organic Almond Yogourt",
 		lactoseFree: false,
 		nutsFree: false,
 		organic: true,
-		price: 0
+		price: 12.49
 	},
 	{
 		name: "Organic Cheese",
 		lactoseFree: false,
 		nutsFree: true,
 		organic: true,
-		price: 0
+		price: 9.99
 	},
 	{
 		name: "Almonds",
 		lactoseFree: true,
 		nutsFree: false,
 		organic: false,
-		price: 0
+		price: 12.35
 	},
 	{
 		name: "Apple",
 		lactoseFree: true,
 		nutsFree: true,
 		organic: false,
-		price: 0
+		price: 0.99
 	},
 	{
 		name: "Organic Strawberry",
 		lactoseFree: true,
 		nutsFree: true,
 		organic: true,
-		price: 0
+		price: 6.99
 	},
 	{
 		name: "Cerials",
 		lactoseFree: true,
 		nutsFree: false,
 		organic: false,
-		price: 0
+		price: 3.49
 	}
 	// TODO: ADD 7 MORE ARTICLES
 ];
