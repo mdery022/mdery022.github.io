@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Oxygen&family=Raleway:wght@700&display=swap" rel="stylesheet">
+  <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <div class="site">
+
+    <div class="top-bar">
+      <p class="store-name">Dery's Groceries</p>
+      <button id="cart-button" onclick="toggleCart()">Cart (<span class="cart-count">0</span>)</button>
+    </div>
+
+    <div class="top-bar-margin">
+      <p class="store-name">L</p>
+    </div>
+
+    <div class="page">
+
+      <div class="side-menu">
+        <div class="side-menu-content">
+          <h1>Filters</h1>
+          <h2>Categories</h2>
+          <label class="filter-container">
+            <input type="checkbox" value="lactoseFree" onchange="updateDiet(this.value)" />
+            <div class="content">
+              <span class="text">Lactose Free</span>
+              <span class="checkmark"></span>
+            </div>
+          </label>
+          <label class="filter-container">
+            <input type="checkbox" value="nutsFree" onchange="updateDiet(this.value)" />
+            <div class="content">
+              <span class="text">Nuts Free</span>
+              <span class="checkmark"></span>
+            </div>
+          </label>
+          <label class="filter-container">
+            <input type="checkbox" value="organic" onchange="updateDiet(this.value)" />
+            <div class="content">
+              <span class="text">Organic Products Only</span>
+              <span class="checkmark"></span>
+            </div>
+          </label>
+          <label class="filter-container">
+            <input type="checkbox" value="discount" onchange="updateDiet(this.value)" />
+            <div class="content">
+              <span class="text">Discounts</span>
+              <span class="checkmark"></span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="items">
+        <div id="display-items">
+          <div id="Nom-1" class="item">
+            <div class="title-brand">
+              <h1>Nom 1</h1>
+              <p>Marque</p>
+            </div>
+            <div class="price-quantity">
+              <p>xx.x $</p>
+              <p>x un.</p>
+            </div>
+            <div class="add-button">
+              <div class="item-counter">
+                <button>-</button>
+                <p>1</p>
+                <button>+</button>
+              </div>
+            </div>
+          </div>
+          <div id="Nom-2" class="item">
+            <div class="title-brand">
+              <h1>Nom 2</h1>
+              <p>Marque</p>
+            </div>
+            <div class="price-quantity">
+              <p>xx.x $</p>
+              <p>x un.</p>
+            </div>
+            <div class="add-button">
+              <button>Ajouter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <p>Website created by <em>- Coding in the AM -</em></p>
+    </footer>
+
+  </div>
+
+  <div id="cart" class="cart">
+    <div id="cart-content">
+      <div class="color-title">
+        <h1>My cart (<span class="cart-count">0</span> items)</h1>
+        <span class="close-cart-button" onclick="toggleCart()">&times;</span>
+      </div>
+      <div id="display-cart"></div>
+      <div class="cart-bottom">
+        <div class="cart-bottom-content">
+          <p><b>Total: </b><span id="cart-total">0</span>$</p>
+          <div>
+            <button id="order-button" onclick="toggleOrderMenu()">Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="order-menu">
+    <div id="order-menu-content">
+      <div class="color-title">
+        <h1>Order</h1>
+        <span class="close-order-menu-button" onclick="toggleOrderMenu()">&times;</span>
+      </div>
+      <div class="padding">
+        <p>We currently only offer curbside pick-up.<br/>Pick-up available 24/7.</p>
+        <p class="error">
+          <span id="enter-all-error">- All fields must be provided</span>
+          <br />
+          <span id="date-error">- We cannot complete your order before <span id="min-date"></span></span>
+        </p>
+        <label>First name</label>
+        <input id="first-name" type="text" placeholder="First name..." />
+        <label>Last name</label>
+        <input id="last-name" type="text" placeholder="Last name..." />
+        <label>Pick-up date and time</label>
+        <input id="pickup-date" type="date" />
+        <input id="pickup-time" type="time" />
+        <button type="button" onclick="submitOrder()">Order</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="notification">
+    <div class="notification-content">
+      <p id="notification-message"></p>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/items.js"></script>
+  <script>
+    updateItems();
+    updateCart();
+
+    const date = new Date();
+    let year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date);
+    let month = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(date);
+    let day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(date);
+    let hour = date.getHours() + 2 < 10 ? '0' + (date.getHours() + 2) : date.getHours() + 2;
+
+    document.getElementById('pickup-date').value = `${year}-${month}-${day}`;
+    document.getElementById('pickup-time').value = `${hour}:00`;
+  </script>
+
+</body>
+</html>

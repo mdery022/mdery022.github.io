@@ -1,0 +1,455 @@
+* {
+    font-size: 100%;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Oxygen', sans-serif;
+}
+
+    h1 {
+        font-size: 1.5em;
+        letter-spacing: 2px;
+        font-weight: normal;
+    }
+
+.page {
+    position: relative;
+}
+
+button {
+    background-color: white;
+    border: 1px solid #010c3b;
+    border-radius: 5px;
+    color: #010c3b;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #010c3b;
+        color: white;
+    }
+
+        button.disabled:hover {
+            background-color: inherit;
+            color: inherit;
+            cursor: not-allowed;
+        }
+
+    .link-button {
+        padding: 0;
+        text-decoration: underline;
+        border: none;
+        background-color: transparent;
+    }
+
+        .link-button:hover {
+            background-color: transparent;
+            color: #010c3b
+        }
+
+.visible {
+    display: block !important;
+}
+
+.error {
+    color: red;
+}
+
+    #enter-all-error, #date-error {
+        display: none;
+    }
+
+.color-title {
+    background-color: #e9ecf2;
+    display: flex;
+    flex-direction: row;
+    padding: 0 1em;
+}
+
+    .color-title h1 {
+        flex: 1;
+        margin: auto 0;
+    }
+
+/* DISPOSITION */
+
+    html, body, .site {
+        height: 100%;
+    }
+
+    .site {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+    }
+
+/* TOP BAR */
+
+    .top-bar {
+        display: flex;
+        flex-direction: row;
+        background-color: #010c3b;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+        .store-name {
+            font-family: 'Raleway', sans-serif;
+            padding: 0 1em;
+            font-size: 1.4em;
+            /* color: #010c3b /*000726*/
+            letter-spacing: 2px;
+            width: 100%;
+        }
+
+        .top-bar button {
+            background-color: transparent;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .top-bar-margin {
+            display: flex;
+            flex-direction: row;
+        }
+
+/* SIDEBAR MENU */
+
+    .side-menu {
+        width: 20%;
+        max-width: 250px;
+    }
+
+    .side-menu-content {
+        margin: 0.5em;
+        padding-bottom: 1em;
+        border-right: 1px solid black;
+    }
+
+        .side-menu h2 {
+            letter-spacing: 1px;
+        }
+
+/*  FILTER SELECTOR
+    This part of the style sheet is inspired by  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox */
+
+    /* The container */
+    .filter-container {
+        display: block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin: 0;
+    }
+    
+    /* Hide the browser's default checkbox */
+    .filter-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .filter-container .content {
+        position: relative;
+        padding: 0.5em;
+    }
+
+    .filter-container .text {
+        padding-left: 10px;
+    }
+
+    /* Create a custom checkbox */
+    .filter-container .checkmark {
+        position: absolute;
+        top: 0.25em;
+        left: 10px;
+        height: 25px;
+        width: 25px;
+        background-color: transparent;
+    }
+
+    /* On selection, add space for the checkmark */
+    .filter-container input:checked~.content {
+        padding-left: 35px;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .filter-container .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .filter-container input:checked~.content .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .filter-container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid #010c3b;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+/* ITEMS */
+
+    .items {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+    }
+
+        .items-margin {
+            width: 20%;
+            max-width: 250px;
+        }
+
+        #display-items {
+            padding: 0.5em;
+            flex-grow: 1;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+            .item:hover {
+                background-color: #e9ecf2;
+            }
+
+            .item p {
+                margin: 0.25em 0;
+            }
+
+            .item div {
+                padding: 1em;
+            }
+
+            .item h1 {
+                font-size: 1.2em;
+                margin: 0;
+            }
+
+            .item .price-quantity {
+                flex: 1;
+                text-align: right;
+            }
+
+            .item .add-button {
+                width: 5em;
+            }
+
+                .item .add-button button {
+                    width: 5em;
+                }
+
+                .item .item-counter {
+                    display: flex;
+                    flex-direction: row;
+                    margin: auto;
+                    border: 1px solid #010c3b;
+                    padding: 0;
+                    height: 35px;
+                    border-radius: 5px;
+                }
+
+                    .item .item-counter button {
+                        border: none;
+                        border-radius: 0;
+                        background-color: transparent;
+                        flex: 0;
+                    }
+
+                        .item-counter button:hover {
+                            background-color: #010c3b;
+                        }
+
+                    .item-counter p {
+                        flex: 1;
+                        text-align: center;
+                        line-height: 27px;
+                    }
+
+            .item .name-brand, .item .add-button, .item .price-quantity {
+                margin: auto;
+            }
+
+            .discount {
+                color: red;
+            }
+
+                .original-price {
+                    text-decoration: line-through;
+                }
+
+/* CART */
+
+    #cart {
+        display: none;
+        background-color: white;
+        background-color: black;
+        background-color: rgba(0,0,0,0.4);
+        width: 100%;
+        z-index: 2;
+    }
+
+        #cart, #cart-content {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+        }
+
+        #cart-content {
+            background-color: white;
+            width: 40%;
+            max-width: 500;;
+        }
+
+            .cart-bottom-content {
+                background-color: #e9ecf2;
+                display: flex;
+                flex-direction: row;
+            }
+
+                .color-title .close-cart-button {
+                    font-size: 40px;
+                    margin: auto;
+                    cursor: pointer;
+                }
+
+            #display-cart {
+                padding: 0.5em;
+            }
+
+            .cart-bottom {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+                .cart-bottom-content {
+                    padding: 1em;
+                }
+
+                    .cart-bottom p {
+                        flex: 1;
+                    }
+
+                    .cart-bottom * {
+                        margin: auto;
+                    }
+
+/* ORDER MENU */
+
+    #order-menu {
+        display: none;
+        background-color: white;
+        background-color: black;
+        background-color: rgba(0,0,0,0.4);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 50px;
+        z-index: 2;
+    }
+
+        #order-menu-content {
+            height: 80%;
+            width: 80%;
+            background-color: white;
+            overflow: auto;
+            margin: auto;
+            border-radius: 20px;
+        }
+
+            #order-menu-content .color-title {
+                padding: 0.5em 1em;
+            }
+
+                #order-menu-content .color-title .close-order-menu-button {
+                    font-size: 40px;
+                    margin: auto;
+                    cursor: pointer;
+                }
+
+            #order-menu-content .padding {
+                padding: 1em;
+            }
+
+                label, input {
+                    display: block;
+                }
+
+                input {
+                    margin: 0.5em 0 1em;
+                }
+
+/* NOTIFICATION */
+
+    #notification {
+        position: fixed;
+        bottom: 30px;
+        width: 100%;
+        display: none;
+    }
+
+        .notification-content {
+            background-color: #010c3b;
+            padding: 1em 2em;
+            color: white;
+            border-radius: 20px;
+            margin: auto;
+            width: fit-content;
+        }
+
+            .notification-content p {
+                margin: 0;
+            }
+
+/* FOOTER */
+
+    footer {
+        background-color: #010c3b;
+        color: white;
+        text-align: center;
+        z-index: 1;
+        padding: 1em 0;
+        width: 100%;
+    }
+
+        .footer-margin {
+            padding: 1em;
+        }
