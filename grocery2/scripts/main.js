@@ -202,7 +202,7 @@ function addItemToCartDiv(item) {
     priceQuantityDiv.appendChild(price);
 
     const quantity = document.createElement("p");
-    quantity.innerHTML = item.price + "/1 un";
+    quantity.innerHTML = (item.price - item.discount) + "/1 un";
     priceQuantityDiv.appendChild(quantity);
 
     const addButtonDiv = document.createElement("div");
