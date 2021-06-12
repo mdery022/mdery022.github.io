@@ -1,0 +1,33 @@
+.btn-primary, .btn-primary:hover, .btn-primary:focus {
+    background-color:  #FF0000;
+    border-color: #FF0000;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #FF0000;
+    background-color: #ffcfcf;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FF0000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.btn-primary:hover {
+    background-color: #ffcfcf;
+    border-color: #ffcfcf;
+    color: #FF0000;
+}
+
+.accordion-button:focus, .btn:target, .btn-primary:hover, .btn-primary:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #ff7575;
+    box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%);
+}
+
+a {
+    color: #FF0000;
+}

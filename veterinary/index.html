@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dery's Veterinary Clinic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class = "container-lg">
+    <!-- Navbar taken from https://getbootstrap.com/docs/5.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <svg id="Capa_1" enable-background="new 0 0 511.856 511.856" height="50" viewBox="0 0 511.856 511.856" width="50" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path fill="#FF0000" d="m176.928 377.961c0-118.593-33.301-134.839-43.508-136.993-15.594-3.287-29.668-9.347-41.827-18.011-16.339-11.636-26.648-22.909-31.511-34.462-10.74-25.51 7.707-49.534 32.196-49.534h36.667c27.854-15.784 53.198-19.438 75.374-10.85 31.845 12.332 44.476 45.825 46.696 52.447 1.584 3.514 3.229 6.937 4.919 10.275 22.433-35.423 53.69-63.084 89.562-83.473 7.202-4.093 16.359-1.574 20.453 5.628s1.574 16.359-5.628 20.453c-4.265 2.424-8.415 4.958-12.468 7.573 17.191 6.149 34.178 16.304 46.492 30.766 4.931 1.426 13.869 3.659 22.509 4.014 15.174.638 25.328 15.903 20.019 30.131-11.412 30.584-35.062 50.54-67.553 47.118-3.792 2.087-10.628 6.6-17.49 14.838 89.41 11.918 66.589 8.973 105.001 13.621 5.065-5.065 10.259-10.26 15.598-15.598 52.571-52.606 52.57-138.184-.003-190.768-49.455-49.466-127.99-52.553-181.022-8.841-6.182 5.072-7.476 6.522-35.476 34.556-27.383-27.416-29.244-29.443-35.45-34.534-53.469-44.073-131.962-40.277-181.048 8.819-52.573 52.584-52.574 138.163.001 190.772 63.321 63.318 107.144 107.159 137.497 137.533z"/>
+                        <path fill="#FF0000" d="m342.721 296.932c-9.868-.408-20.919-4.039-19.666-3.66-34.301-10.37-62.017-36.69-81.361-66.905-9.79-15.223-18.138-33.008-19.063-36.097-.062-.196-8.361-26.25-29.303-34.245-2.822-1.077-5.799-1.773-8.913-2.125.656 8.583 2.672 19.063 7.979 27.866 4.277 7.095 1.992 16.313-5.103 20.59-7.11 4.285-16.322 1.978-20.59-5.103-7.44-12.343-10.675-25.964-11.908-37.724-13.737 5.937-14.9 9.43-21.795 9.43h-40.72c-2.045 0-3.911.969-4.754 2.469-2.361 4.196 3.366 14.196 21.475 27.093 8.78 6.256 19.078 10.66 30.612 13.09 12.758 2.693 30.931 11.594 45.086 38.71 14.75 28.258 22.23 71.201 22.23 127.637v55.507c41.294 41.332 39.02 39.293 41.602 40.76 2.28 1.295 4.327 2.062 7.398 1.997 2.57.058 4.757-.53 6.774-1.646 3.718-1.884-10.114 11.188 167.172-166.119-11.745-1.418 4.771.729-87.152-11.525z"/>
+                        <path fill="#FF0000" d="m369.517 222.794c15.171 2.649 26.923-3.439 35.035-18.11-12.904-1.927-23.466-5.608-24.027-5.806-2.79-.982-5.226-2.767-7.004-5.13-13.18-17.521-37.204-27.137-56.214-29.417-18.114 16.4-32.751 35.06-43.63 55.618 15.295 20.716 32.27 33.76 46.753 40.278 17.342-27.558 40.198-36.314 41.289-36.719 2.491-.924 5.181-1.17 7.798-.714z"/>
+                    </g>
+                </svg>
+                Dery's Veterinary clinic
+            </a>
+            <div class="d-flex justify-content-end">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#our-services">Our Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#our-team">Our Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact-us">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Hero from https://getbootstrap.com/docs/5.0/examples/heroes/ -->
+    <div class="container my-5">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <div class="d-flex">
+                    <svg id="Capa_1" enable-background="new 0 0 511.856 511.856" height="100" viewBox="0 0 511.856 511.856" width="100" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path fill="#FF0000" d="m176.928 377.961c0-118.593-33.301-134.839-43.508-136.993-15.594-3.287-29.668-9.347-41.827-18.011-16.339-11.636-26.648-22.909-31.511-34.462-10.74-25.51 7.707-49.534 32.196-49.534h36.667c27.854-15.784 53.198-19.438 75.374-10.85 31.845 12.332 44.476 45.825 46.696 52.447 1.584 3.514 3.229 6.937 4.919 10.275 22.433-35.423 53.69-63.084 89.562-83.473 7.202-4.093 16.359-1.574 20.453 5.628s1.574 16.359-5.628 20.453c-4.265 2.424-8.415 4.958-12.468 7.573 17.191 6.149 34.178 16.304 46.492 30.766 4.931 1.426 13.869 3.659 22.509 4.014 15.174.638 25.328 15.903 20.019 30.131-11.412 30.584-35.062 50.54-67.553 47.118-3.792 2.087-10.628 6.6-17.49 14.838 89.41 11.918 66.589 8.973 105.001 13.621 5.065-5.065 10.259-10.26 15.598-15.598 52.571-52.606 52.57-138.184-.003-190.768-49.455-49.466-127.99-52.553-181.022-8.841-6.182 5.072-7.476 6.522-35.476 34.556-27.383-27.416-29.244-29.443-35.45-34.534-53.469-44.073-131.962-40.277-181.048 8.819-52.573 52.584-52.574 138.163.001 190.772 63.321 63.318 107.144 107.159 137.497 137.533z"/>
+                            <path fill="#FF0000" d="m342.721 296.932c-9.868-.408-20.919-4.039-19.666-3.66-34.301-10.37-62.017-36.69-81.361-66.905-9.79-15.223-18.138-33.008-19.063-36.097-.062-.196-8.361-26.25-29.303-34.245-2.822-1.077-5.799-1.773-8.913-2.125.656 8.583 2.672 19.063 7.979 27.866 4.277 7.095 1.992 16.313-5.103 20.59-7.11 4.285-16.322 1.978-20.59-5.103-7.44-12.343-10.675-25.964-11.908-37.724-13.737 5.937-14.9 9.43-21.795 9.43h-40.72c-2.045 0-3.911.969-4.754 2.469-2.361 4.196 3.366 14.196 21.475 27.093 8.78 6.256 19.078 10.66 30.612 13.09 12.758 2.693 30.931 11.594 45.086 38.71 14.75 28.258 22.23 71.201 22.23 127.637v55.507c41.294 41.332 39.02 39.293 41.602 40.76 2.28 1.295 4.327 2.062 7.398 1.997 2.57.058 4.757-.53 6.774-1.646 3.718-1.884-10.114 11.188 167.172-166.119-11.745-1.418 4.771.729-87.152-11.525z"/>
+                            <path fill="#FF0000" d="m369.517 222.794c15.171 2.649 26.923-3.439 35.035-18.11-12.904-1.927-23.466-5.608-24.027-5.806-2.79-.982-5.226-2.767-7.004-5.13-13.18-17.521-37.204-27.137-56.214-29.417-18.114 16.4-32.751 35.06-43.63 55.618 15.295 20.716 32.27 33.76 46.753 40.278 17.342-27.558 40.198-36.314 41.289-36.719 2.491-.924 5.181-1.17 7.798-.714z"/>
+                        </g>
+                    </svg>
+                    <h1 class="display-4 fw-bold lh-1">Dery's Veterinary Clinic</h1>
+                </div>
+                <p class="lead">
+                    At Dery's Veterinary Clinic Canada, we’re pet people too. We understand the importance of your morning snuggles and the tail-wagging excitement when you come through the door, even if you’re only gone for five minutes.
+                    <br/>
+                    Your pets are always there for you, so we are always here for them.
+                    <br/>
+                    <small>- Text from <a target="_blank" href="https://vcacanada.com/kanata">VCA</a></small>
+                </p>
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold" data-bs-toggle="modal" data-bs-target="#bookingModal">Book an appointment</button>
+                <br/><br/><br/>
+                <small><a target="_blank" href="https://www.americanhumane.org/fact-sheet/choosing-a-cat-collar/">Image Source</a></small>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                <img src="https://americanhumane.org/app/uploads/2016/08/john-tecuceanu-1557217-unsplash-1024x683.jpg" alt width="720" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5" id="our-services">
+        <div class="row p-5 rounded-3 border shadow-lg">
+            <div class="col-lg-4 p-0">
+                <div class="h-100 shadow-lg" style="background-image: url(https://www.thesprucepets.com/thmb/nbwdADZp11tKzcCPHOeK8cGgL04=/1333x1000/smart/filters:no_upscale%28%29/GettyImages-962608834-fd496cfed51e4d2abe61c0af864fa681.jpg);background-size: cover;">
+                    <div class="row align-items-center h-100 w-100 m-0" style="background-color: rgba(0, 0, 0, .5);">
+                        <button type="button" class="btn btn-primary btn-lg px-4 fw-bold w-auto m-auto" data-bs-toggle="modal" data-bs-target="#bookingModal">Book an appointment</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h1>Our Services</h1>
+                <!-- Accordion from https://getbootstrap.com/docs/5.0/components/accordion/ -->
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Spays and Neuters
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Our hospital routinely performs spays and neuters, the surgical sterilization of female and male dogs and cats. Spaying involves removal of the uterus and ovaries of female dogs and cats and is called ovariohysterectomy. Neutering involves removal of the testicles of male dogs and cats and is called castration. Both procedures are performed under general anesthesia and both involve a surgical incision. Pain management medications are used routinely to insure your pet's comfort. These surgeries are performed most commonly at or around six months of age. Ask our staff about spaying or neutering your pet to help prevent unwanted sexual behavior and pregnancies and to decrease or eliminate the possibility of certain disease conditions later in life.</p>
+                                <small>- Text from <a target="_blank" href="https://vcacanada.com/kanata/services/primary-care/spays-and-neuters">VCA</a></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Euthanasia Services
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Deciding on euthanasia for a beloved pet and companion is one of the most difficult decisions a pet owner has to make.</p>
+                                <p>In many cases, it is not so clear cut, and consultation with your veterinarian may be very helpful. We can use a variety of methods to help determine whether your pet is in pain, suffering, and address these needs to improve the quality of life, or to assist you in your decision to say goodbye to your pet.</p>
+                                <small>- Text from <a target="_blank" href="https://vcacanada.com/kanata/services/primary-care/euthanasia-services">VCA</a></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Nutrition
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Pets with certain medical conditions such as liver, kidney, bladder, heart disease, or obesity often require specific nutritional therapy to minimize symptoms of their disease. If your pet has any of these conditions, contact your veterinarian to discuss possible dietary recommendations or alterations.</p>
+                                <p>Other pets that may benefit from nutritional services include new kittens or puppies, geriatric pets, or pets eating a home-cooked diet. Contact our veterinarians for a detailed evaluation of your pet's nutritional needs. We are happy to discuss different types of nutrition and supplements that may benefit your pet and allow them to reach or maintain their optimal health level.</p>
+                                <small>- Text from <a target="_blank" href="https://vcacanada.com/kanata/services/nutrition">VCA</a></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Dental Care
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Beginning at age one, your pet should have an annual dental examination and cleaning performed by your veterinarian. A thorough cleaning removes plaque and tartar both above and below the gum line. This proactive treatment is aimed at maintaining the natural oral defenses so that periodontal disease and other dental problems have a harder time becoming established. A good home care program can tremendously extend the positive effects of the professional cleaning.</p>
+                                <small>- Text from <a target="_blank" href="https://vcacanada.com/kanata/services/dentistry">VCA</a></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Vaccination
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Our hospital offers vaccination examinations because vaccinations are critical to the well-being of your pets. Vaccines protect against potentially deadly viral diseases like Distemper, Parvovirus, Leptospirosis and Rabies in dogs, and Panleukopenia, Feline Leukemia Virus and Rabies in cats.</p>
+                                <small>- Text from <a target="_blank" href="https://vcacanada.com/kanata/services/wellness-and-preventative-care/vaccinations">VCA</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <small><a target="_blank" href="https://www.thesprucepets.com/best-dogs-for-first-time-owners-4153979">Image source</a></small>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5" id="our-team">
+        <div class="p-5 rounded-3 border shadow-lg">
+            <h1>Our Team</h1>
+            <div class="row p-0">
+                <div class="col-lg-4">
+                    <div class="p-0 m-1 overflow-hidden rounded-3 border shadow-lg">
+                        <img src="https://www.usnews.com/dims4/USNEWS/1afb8f1/2147483647/crop/2000x1313%2B0%2B0/resize/640x420/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F75%2F77%2F28b9c03949ceb1e855bfa2b78c46%2F200109-veterinarian-stock.jpg" alt width="100%" />
+                        <div class="m-2">
+                            <h5 class="m-0">Iris Wheeler</h5>
+                            <p class="m-0">Veterinarian</p>
+                            <small><a target="_blank" href="https://www.usnews.com/education/best-graduate-schools/articles/how-to-apply-to-veterinary-school-and-become-a-veterinarian">Image Source</a></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="p-0 m-1 overflow-hidden rounded-3 border shadow-lg">
+                        <img src="https://www.avma.org/sites/default/files/styles/main_menu_image/public/2019-11/MenuMembership.50.jpg?itok=aa5YMc9D" alt width="100%" />
+                        <div class="m-2">
+                            <h5 class="m-0">Jaylee Grant</h5>
+                            <p class="m-0">Veterinarian</p>
+                            <small><a target="_blank" href="https://www.avma.org/education/ecfvg">Image Source</a></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="p-0 m-1 overflow-hidden rounded-3 border shadow-lg">
+                        <img src="https://dogtime.com/assets/uploads/2009/04/find-veterinarian.jpg" alt width="100%" />
+                        <div class="m-2">
+                            <h5 class="m-0">Chandler Sharp</h5>
+                            <p class="m-0">Veterinarian</p>
+                            <small><a target="_blank" href="https://dogtime.com/dog-health/fitness/802-finding-vet-hsus">Image Source</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="contact-us">
+        <div class="p-5 rounded-3 border shadow-lg">
+            <h1>Contact us</h1>
+            <div class="row">
+                <div class="col-lg-8 p-0 px-4">
+                    <form action="#contact-us" class="needs-validation">
+                        <div class="form-group">
+                            <label>Name *</label>
+                            <input type="text" class="form-control" placeholder="Enter your name" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" class="form-control" placeholder="Enter your email" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Comments *</label>
+                            <textarea rows="6" class="form-control" placeholder="What did you want to tell us?" required></textarea>
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+                <div class="col-lg-4 p-0">
+                    <div class="shadow-lg border rounded-3">
+                        <img src="assets/img/location.png" width="100%" />
+                        <p class="m-3">
+                            440 Hazeldean Rd<br/>
+                            Kanata, Ontario K2L 1V2<br/>
+                            Tel: 613-836-2848
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row p-5 pb-4">
+            <div class="col-sm align-items-center m-auto">
+                <h5 href="#">
+                    <svg id="Capa_1" enable-background="new 0 0 511.856 511.856" height="50" viewBox="0 0 511.856 511.856" width="50" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path fill="#FF0000" d="m176.928 377.961c0-118.593-33.301-134.839-43.508-136.993-15.594-3.287-29.668-9.347-41.827-18.011-16.339-11.636-26.648-22.909-31.511-34.462-10.74-25.51 7.707-49.534 32.196-49.534h36.667c27.854-15.784 53.198-19.438 75.374-10.85 31.845 12.332 44.476 45.825 46.696 52.447 1.584 3.514 3.229 6.937 4.919 10.275 22.433-35.423 53.69-63.084 89.562-83.473 7.202-4.093 16.359-1.574 20.453 5.628s1.574 16.359-5.628 20.453c-4.265 2.424-8.415 4.958-12.468 7.573 17.191 6.149 34.178 16.304 46.492 30.766 4.931 1.426 13.869 3.659 22.509 4.014 15.174.638 25.328 15.903 20.019 30.131-11.412 30.584-35.062 50.54-67.553 47.118-3.792 2.087-10.628 6.6-17.49 14.838 89.41 11.918 66.589 8.973 105.001 13.621 5.065-5.065 10.259-10.26 15.598-15.598 52.571-52.606 52.57-138.184-.003-190.768-49.455-49.466-127.99-52.553-181.022-8.841-6.182 5.072-7.476 6.522-35.476 34.556-27.383-27.416-29.244-29.443-35.45-34.534-53.469-44.073-131.962-40.277-181.048 8.819-52.573 52.584-52.574 138.163.001 190.772 63.321 63.318 107.144 107.159 137.497 137.533z"/>
+                            <path fill="#FF0000" d="m342.721 296.932c-9.868-.408-20.919-4.039-19.666-3.66-34.301-10.37-62.017-36.69-81.361-66.905-9.79-15.223-18.138-33.008-19.063-36.097-.062-.196-8.361-26.25-29.303-34.245-2.822-1.077-5.799-1.773-8.913-2.125.656 8.583 2.672 19.063 7.979 27.866 4.277 7.095 1.992 16.313-5.103 20.59-7.11 4.285-16.322 1.978-20.59-5.103-7.44-12.343-10.675-25.964-11.908-37.724-13.737 5.937-14.9 9.43-21.795 9.43h-40.72c-2.045 0-3.911.969-4.754 2.469-2.361 4.196 3.366 14.196 21.475 27.093 8.78 6.256 19.078 10.66 30.612 13.09 12.758 2.693 30.931 11.594 45.086 38.71 14.75 28.258 22.23 71.201 22.23 127.637v55.507c41.294 41.332 39.02 39.293 41.602 40.76 2.28 1.295 4.327 2.062 7.398 1.997 2.57.058 4.757-.53 6.774-1.646 3.718-1.884-10.114 11.188 167.172-166.119-11.745-1.418 4.771.729-87.152-11.525z"/>
+                            <path fill="#FF0000" d="m369.517 222.794c15.171 2.649 26.923-3.439 35.035-18.11-12.904-1.927-23.466-5.608-24.027-5.806-2.79-.982-5.226-2.767-7.004-5.13-13.18-17.521-37.204-27.137-56.214-29.417-18.114 16.4-32.751 35.06-43.63 55.618 15.295 20.716 32.27 33.76 46.753 40.278 17.342-27.558 40.198-36.314 41.289-36.719 2.491-.924 5.181-1.17 7.798-.714z"/>
+                        </g>
+                    </svg>
+                    Dery's Veterinary clinic
+                </h5>
+            </div>
+            <div class="col-sm">
+                <a href="#our-services">Our Services</a><br/>
+                <a href="#our-team">Our Team</a><br/>
+                <a href="#contact-us">Conctact Us</a><br/>
+            </div>
+            <div class="col-sm m-auto">
+                <p class="text-center m-auto">Website designed by <em>-Coding in the AM-</em></p>
+            </div>
+        </div>
+        <div class="m-5 mt-0">Logo made by <a target="_blank" href="https://www.freepik.com" title="Freepik">Freepik</a> from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    </div>
+</footer>
+
+
+<!-- Modal structure taken from https://github.com/RyanMatte/Website/tree/master -->
+<div class="modal fade show" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-modal="true" role="form" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookingModalLabel">Book an appointment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Form structure taken from https://getbootstrap.com/docs/5.0/forms/validation/#custom-styles -->
+            <form class="needs-validation">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name *</label>
+                        <div class="invalid-feedback">Name is required</div>
+                        <input type="text" class="form-control" placeholder="Enter your name" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <div class="invalid-feedback">Email is required</div>
+                        <input type="email" class="form-control" placeholder="Enter your email" />
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <div class="invalid-feedback">Phone number is required</div>
+                        <input type="tel" class="form-control" placeholder="Enter your phone number" />
+                    </div>
+                    <label>Service *</label>
+                    <select class="form-select" required aria-label="select example" aria-required="true">
+                      <option value="">- Select a service -</option>
+                      <option value="1">Spays and Neuters</option>
+                      <option value="2">Enthanasia Services</option>
+                      <option value="3">Nutrition</option>
+                      <option value="3">Dental Care</option>
+                      <option value="3">Vaccination</option>
+                    </select>
+                    <div class="form-group">
+                        <label>Date *</label>
+                        <div class="invalid-feedback">Date is required</div>
+                        <input type="date" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Time *</label>
+                        <div class="invalid-feedback">Time is required</div>
+                        <input type="time" class="form-control" required />
+                    </div>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Book Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
