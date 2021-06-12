@@ -8,3 +8,6 @@
 
 ## Groceries version 2
 - [https://mdery022.github.io/grocery2/](https://mdery022.github.io/grocery2/)
+
+## Veterinary
+- [https://mdery022.github.io/veterinary/](https://mdery022.github.io/veterinary/)
