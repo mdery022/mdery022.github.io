@@ -11,3 +11,6 @@
 
 ## Veterinary
 - [https://mdery022.github.io/veterinary/](https://mdery022.github.io/veterinary/)
+
+## Veterinary version 2
+- [https://mdery022.github.io/veterinary2/](https://mdery022.github.io/veterinary2/)
