@@ -16,7 +16,7 @@ function HeroImage() {
             <HeroText>
                 <h1>Photo Hire</h1>
                 <br />
-                <Button text="Browse Catalog >" handleClick={handleClick} white />
+                <Button text="browse-catalog" handleClick={handleClick} white />
             </HeroText>
         </Hero>
     );

@@ -3,19 +3,35 @@ import { useParams } from "react-router-dom";
 import { profiles } from '../catalog/Catalog';
 import styled from 'styled-components';
 import { BsChatDots } from 'react-icons/bs';
+import { useTranslation } from "react-i18next";
 
 function Chat() {
     const { id } = useParams();
+    const { t } = useTranslation();
+
+    let starterMessage;
+
+    if (id === '0') {
+        starterMessage = t("help-message");
+    } else {
+        starterMessage = t("no-backend-message");
+    }
+
     const [profile, setProfile] = useState(null);
-    const [messages, setMessages] = useState([{id:0, sender:0, content: "As there is no backend, the messages will not be saved upon closing or reloading this window."}]);
+    const [messages, setMessages] = useState([{id:0, sender:0, content: starterMessage}]);
 
     useEffect(() => {
-        profiles.forEach(p => {
-            if (p.id === id) { 
-                setProfile(p);
-            } 
-        });
+        if (id == 0) {
+            setProfile({name: t("help")});
+        } else {
+            profiles.forEach(p => {
+                if (p.id === id) { 
+                    setProfile(p);
+                } 
+            });
+        }
     }, [id]);
+
 
     const sendChat = () => {
         const text = document.getElementById('text').value;

@@ -2,63 +2,65 @@ import styled from 'styled-components';
 import { GrChat, GrCalendar } from 'react-icons/gr';
 import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
+import { useTranslation, withTranslation } from 'react-i18next';
 
 export const profiles = [
     {
-        id: "0",
+        id: "1",
         name: "Name 1",
-        category: "Category 1",
-        shortDescription: "Short description",
+        category: "mariage",
+        shortDescription: "shortDescription",
         price: 20,
         portfolio: ["https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_960_720.jpg", "https://cdn.pixabay.com/photo/2016/06/29/04/39/bride-1486004_960_720.jpg", "https://cdn.pixabay.com/photo/2014/09/13/04/59/couple-443600_960_720.jpg", "https://cdn.pixabay.com/photo/2015/03/30/12/35/sunset-698501_960_720.jpg", "https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005_960_720.jpg", "https://cdn.pixabay.com/photo/2016/04/26/22/31/bride-1355473_960_720.jpg"],
         profilePicture: "",
-        longDescription: "Long Description"
-    },
-    {
-        id: "1",
-        name: "Name 2",
-        category: "Category 2",
-        shortDescription: "Short description",
-        price: 20,
-        portfolio: [],
-        profilePicture: "",
-        longDescription: "Long Description"
+        longDescription: "longDescription"
     },
     {
         id: "2",
-        name: "Name 3",
-        category: "Category 3",
-        shortDescription: "Short description",
+        name: "Name 2",
+        category: "commercial",
+        shortDescription: "shortDescription",
         price: 20,
         portfolio: [],
         profilePicture: "",
-        longDescription: "Long Description"
+        longDescription: "longDescription"
     },
     {
         id: "3",
-        name: "Name 4",
-        category: "Category 4",
-        shortDescription: "Short description",
-        price: 20,
-        portfolio: [""],
-        profilePicture: "",
-        longDescription: "Long Description"
-    },
-    {
-        id: "4",
-        name: "Name 5",
-        category: "Category 5",
-        shortDescription: "Short description",
+        name: "Name 3",
+        category: "awards",
+        shortDescription: "shortDescription",
         price: 20,
         portfolio: [],
         profilePicture: "",
-        longDescription: "Long Description"
+        longDescription: "longDescription"
+    },
+    {
+        id: "4",
+        name: "Name 4",
+        category: "fashion",
+        shortDescription: "shortDescription",
+        price: 20,
+        portfolio: [""],
+        profilePicture: "",
+        longDescription: "longDescription"
+    },
+    {
+        id: "5",
+        name: "Name 5",
+        category: "other",
+        shortDescription: "shortDescription",
+        price: 20,
+        portfolio: [],
+        profilePicture: "",
+        longDescription: "longDescription"
     }
 ];
 
-const categories = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"];
+const categories = ["mariage", "commercial", "awards", "fashion", "other"];
 
 function Catalog() {
+    const { t } = useTranslation();
     const updateCategories = (category) => () => {
         let newCategories = [...chosenCategories];
         const index = newCategories.indexOf(category);
@@ -92,7 +94,8 @@ function Catalog() {
 
     return (
         <Content>
-            <Label>Categories: </Label>
+            <h1>{t('catalog')}</h1>
+            <Label>{t('categories')}: </Label>
             {categories.map(c => (
                 <div key={c.replace(" ", "-")}>
                     <input 
@@ -101,7 +104,7 @@ function Catalog() {
                         name={c.replace(" ", "-")}
                         value={c.replace(" ", "-")}
                         onClick={updateCategories(c)} />
-                    <label>{c}</label>
+                    <label>{t(c)}</label>
                 </div>
             ))}
 
@@ -116,13 +119,13 @@ function Catalog() {
                             <DisplayImage image={p.portfolio[0]} />
                             <ProfileInfo>
                                 <h3 onClick={openProfile(p.id)}>{p.name}</h3>
-                                <p>{p.category}</p>
-                                <p>{p.shortDescription}</p>
+                                <p>{t(p.category)}</p>
+                                <p>{t(p.shortDescription)}</p>
                             </ProfileInfo>
                             <ProfileActions>
-                                <p>{p.price}$/hour</p>
-                                <ActionButton onClick={reserve(p.id)}><GrCalendar/> Reserve</ActionButton>
-                                <ActionButton onClick={openChat(p.id)}><GrChat/> Chat</ActionButton>
+                                <p>{p.price}$/{t('hour')}</p>
+                                <ActionButton onClick={reserve(p.id)}><GrCalendar/> {t('reserve')}</ActionButton>
+                                <ActionButton onClick={openChat(p.id)}><GrChat/> {t("chat")}</ActionButton>
                             </ProfileActions>
                         </ProfileCard>
                     </div>

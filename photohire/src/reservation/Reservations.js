@@ -13,9 +13,9 @@ function Chats() {
 
     return (
         <Content>
-            <h1>{t("messages")}</h1>
-            <p>{t("no-messages")} :(</p>
-            <Button text={"browse-catalog"} handleClick={handleClick} />
+            <h1>{t("reservations")}</h1>
+            <p>{t("no-reservations")}</p>
+            <Button text="browse-catalog" handleClick={handleClick} />
         </Content>
     );
 }

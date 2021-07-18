@@ -46,3 +46,12 @@ html, body, #root, .App {
   height: 30px;
   width: 30px;
 }
+
+.big-icon {
+  height: 150px;
+  width: 150px;
+}
+
+h1 {
+  text-align: center;
+}

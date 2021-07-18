@@ -3,11 +3,13 @@ import { useHistory, useParams } from "react-router-dom";
 import { profiles } from '../catalog/Catalog';
 import styled from 'styled-components';
 import { GrChat, GrCalendar } from 'react-icons/gr';
+import { useTranslation } from "react-i18next";
 
 function Profile() {
     const { id } = useParams();
     const [profile, setProfile] = useState(null);
     const history = useHistory();
+    const { t } = useTranslation();
 
     useEffect(() => {
         profiles.forEach(p => {
@@ -32,15 +34,15 @@ function Profile() {
                     <ProfilePicture src={profile.profilePicture} alt="" />
                     <ProfileInfo>
                         <h2>{profile.name}</h2>
-                        <p>{profile.category}</p>
+                        <p>{t(profile.category)}</p>
                     </ProfileInfo>
                     <ProfileActions>
-                        <p>{profile.price}$/hour</p>
-                        <ActionButton onClick={reserve(profile.id)}><GrCalendar/> Reserve</ActionButton>
-                        <ActionButton onClick={openChat(profile.id)}><GrChat/> Chat</ActionButton>
+                        <p>{profile.price}$/{t("hour")}</p>
+                        <ActionButton onClick={reserve(profile.id)}><GrCalendar/> {t("Reserve")}</ActionButton>
+                        <ActionButton onClick={openChat(profile.id)}><GrChat/> {t("Chat")}</ActionButton>
                     </ProfileActions>
                 </ProfileIntro>
-                <p>{profile.longDescription}</p>
+                <p>{t(profile.longDescription)}</p>
                 <div>
                     {profile.portfolio.map(p => (
                         <GalleryItem key={p}>
@@ -57,7 +59,7 @@ function Profile() {
 const Content = styled.div`
     max-width: 1000px;
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
 `;
 
 const ProfilePicture = styled.img`

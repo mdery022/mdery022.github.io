@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 function Button(props) {
+    const { t } = useTranslation();
     let StyledButton = ButtonDiv;
 
     if (props.white) {
@@ -9,7 +11,7 @@ function Button(props) {
 
     return (
         <StyledButton onClick={props.handleClick}>
-            {props.text}
+            {t(props.text)}
         </StyledButton>
     )
 }
@@ -22,7 +24,7 @@ const WhiteButtonDiv = styled.div`
     border-radius: 10px;
     font-weight: 700;
     width: fit-content;
-    margin: auto;
+    margin: 0 auto;
 `;
 
 const ButtonDiv = styled.div`
@@ -34,7 +36,7 @@ const ButtonDiv = styled.div`
     border-radius: 10px;
     font-weight: 600;
     width: fit-content;
-    margin: auto;
+    margin: 0 auto;
 `;
 
 export default Button; 

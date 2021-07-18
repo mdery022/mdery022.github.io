@@ -2,9 +2,11 @@ import HeroImage from './HeroImage/HeroImage';
 import styled from 'styled-components';
 import Button from '../common/button/Button';
 import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function Home() {
     const history = useHistory();
+    const { t } = useTranslation();
 
     function handleClick() {
         history.push('/catalog');
@@ -15,19 +17,19 @@ function Home() {
             <HeroImage />
             <Content>
                 <Row>
-                    <p>Find the best photograph for any occasion!</p>
+                    <p>{t("find-best")}</p>
                     <img src="https://cdn.pixabay.com/photo/2016/02/19/11/37/lens-1209823_960_720.jpg" alt="" />
                 </Row>
                 <Row>
                     <img src="https://cdn.pixabay.com/photo/2015/05/31/13/04/magazine-791653_960_720.jpg" alt="" />
-                    <p>Go through our huge catalog of professionals tailored to your needs.</p>
+                    <p>{t("huge-catalog")}</p>
                 </Row>
                 <Row>
-                    <p>Easily chat and book with any of our photographs.</p>
+                    <p>{t("easily-chat")}</p>
                     <img src="https://cdn.pixabay.com/photo/2015/06/08/15/14/cell-phone-801946_960_720.jpg" alt="" />
                 </Row>
                 <Row>
-                    <Button text="Browse our catalog >" handleClick={handleClick}/>
+                    <Button text="browse-catalog" handleClick={handleClick}/>
                 </Row>
             </Content>
         </div>
@@ -36,7 +38,7 @@ function Home() {
 
 const Content = styled.div`
     max-width: 1000px;
-    margin: auto;
+    margin: 0 auto;
     padding: 2em;
 `;
 
